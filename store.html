@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product slider</title>
+</head>
+<body>
+          
+    <!--====================css=================================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.css" integrity="sha512-+1GzNJIJQ0SwHimHEEDQ0jbyQuglxEdmQmKsu8KI7QkMPAnyDrL9TAnVyLPEttcTxlnLVzaQgxv2FpLCLtli0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+
+    <style>
+       * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+ul, li, ol {
+    list-style: none;
+    }
+
+    a {
+    text-decoration: none;
+}
+body, main{
+    margin: 0 auto;
+    font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+/* css untuk header */
+header {
+    position: fixed;
+    top:0;
+    height: 52px;
+    width: 100%;
+    color: rgba(255, 253, 253, 0.87);
+    background-color: rgba(0,0,0,0.92);
+    z-index: 10;
+  }
+
+
+.header-wrapper {
+
+    /* text-align: center;
+    line-height: 50px;
+    font-size: 30px; */
+  }
+
+.header-list{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0;
+    /* margin-left:50px; */
+    
+
+}
+.header-list li{
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+}
+.header-list li a{
+    text-decoration: none;
+    color: #f5f5f7;
+}
+.header-list a {
+    
+  /* margin-left:50px; 
+  font-size:20px;
+  margin-bottom:10px;   
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;  */
+
+}
+.logo{
+    width: 25px;
+    /* width: 30px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    float:left;
+    margin-left:30px; */
+    
+}
+span{
+    /* margin-left:20px;
+    float:left;
+     */
+     color: #6e6e73;
+    
+}
+
+
+.search{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-right:30px;
+    float:right;
+    background-color: rgba(0,0,0,0.92);
+    border-radius:10px;
+}
+/* header */
+
+
+
+
+
+        body{
+        margin:0px;
+        padding:0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .productslider{
+            background-color: beige;
+            padding:0px 20px;
+            box-sizing: border-box;
+            color: #1d1d1f;
+            
+        }
+        .slider-heading{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        display: inline;
+
+        flex-wrap: wrap;
+        width:90px ;
+        margin:0px auto;
+        padding:0px 20px;
+        color: #1d1d1f;
+        
+
+
+        }
+        .slider-heading h3{
+            font-size: 1.75rem;
+            color:grey;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            line-height:34px ;
+
+        }
+        .slider-heading h3 span{
+        color:darkturquoise;
+
+
+        }
+        .product-box{
+            display:flex;
+            flex-direction: column;
+            width:400px ;
+            text-decoration: none;
+            background-color: beige;
+            border-radius:20px ;
+            margin:20px;
+            box-sizing: border-box;
+
+            padding:25px;
+            box-shadow:2px 2px 8px  rgba(0,0,0,0.03) ;
+            border:1px solid rgba(0,0,0,0.08) ;
+            overflow: hidden;
+            transition:all ease o.3s ;
+        }
+        
+        
+        .product-box:hover{
+            box-shadow: 2px 3px 8px rgba(0,o,0,0.10);
+            transform: scale(1.008);
+            transition:all ease 0.3s ;
+        }
+        .product-box strong{
+            color:darkgrey;
+            font-size:1.75rem ;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 600;
+            margin-top:24px ;
+        }
+        .product-box img{
+            width:210px ;
+            height:250px ;
+            display:flex;
+            padding:20px 0px ;
+            object-fit:contain ;
+            object-position:center ;
+            margin:20px auto ;
+
+        }
+        .product-small img{
+            width:20;
+            height:50 ;
+            display:flex;
+            padding:20px 0px ;
+            object-fit:contain ;
+            object-position:center ;
+            margin:20px auto ;
+
+        }
+        .available-colors{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .available-colors  .product-color{
+            width:10px ;
+            height:10px ;
+            border-radius: 50%;
+            display:inline-block;
+            border:1px solid rgba(0,0,0,0.1) ;
+            box-shadow:2px 2px 30px rgba(0,0,0,0.03);
+            margin:3px;
+        }
+        .buy-price{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0px 0px;
+        }
+        .buy-price p{
+            color: #6e6e73 ;
+            font-family: Arial, Helvetica, sans-serif;
+            max-width:250px;
+            line-height:20px ;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .buy-price  .buy-btn{
+            color: antiquewhite;
+            background-color: blue;
+            text-decoration: none;
+            width:80px ;
+            height:40px;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .ISpager{
+            display:none ;
+
+        }
+        .ISAction >a{
+            background-color: black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: none;
+            display:inherit;
+            justify-content: center;
+            align-items: center;
+        }
+        .ISAction >a::after{
+            position: absolute;
+            content:'' ;
+            margin:auto ;
+            border:solid #ffffff ;
+            border-width:0px 4px 4px 0px ;
+            display: inline-block;
+            padding: 5px;
+        }
+        .ISAction >.ISPrev::after{
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+
+        }
+        .ISAction >.ISNext::after{
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+
+        }
+        @media (max-width:600px){
+            .slider-heading h3{
+                font-size: 21px;
+            }
+            .product-box{
+                width: 310px;
+                margin:10px ;
+                box-sizing: border-box;
+            }
+            .product-box img{
+                width:160px ;
+                height:190px ;
+                padding:0px ;
+            }
+            .product-small img{
+                width:70%;
+                height:100%;
+                padding:0px;
+            }
+            .product-box strong{
+                font-size: 21px;
+            }
+            .ISAction >a{
+                display: none;
+            }
+
+
+        }
+        footer {
+      background-color: #f5f5f7;
+      padding: 40px;
+      height: 1000px;
+      color: #1d1d1f;
+  }
+
+  .logo-footer {
+      width: 50px;
+      margin-bottom: 10px;
+  }
+
+  .txt-copy {
+      margin: 0;
+  }
+
+  .txt-copy a {
+      color: #fff;
+  }
+
+  .txt-copy a:hover {
+      text-decoration: underline;
+  }
+  .footer-container{
+      display: flex;
+  }
+  .footer-list {
+      float: left;
+      width: 30%;
+      margin: 0 auto;
+      
+  }
+
+  .footer-list p a {
+      color: #1d1d1f;
+  }
+
+  .footer-list p a:hover {
+      text-decoration: underline;
+  }
+
+  .clear-footer {
+      clear: left;
+  }
+  .foot-notes ul li{
+      color: #86868b;
+      height: 2em;
+      margin: 10px 0;
+      text-align: left;
+  }
+  .footer-container, .footer-list-container{
+      width: 70%;
+      margin: 0 auto;
+  }
+/* footer */
+
+        
+        
+        </style>
+        <!--html==================================================-->
+        <header>
+            <div class="header-wrapper">
+                <span class="menu-logo hp-viewport fas fa-ellipsis-h"></span>
+                <ul class="header-list">
+                    
+                    <li class="header-content hp-viewport apple-header"><a href="https://www.apple.com/"><img class="logo" src="logo- 1.png"></a></li>
+    
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/mac/">Mac</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/ipad/">iPad</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/iphone/">iPhone</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/watch/">Watch</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/tv/">TV</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://www.apple.com/music/">Music</a></li>
+                    <li class="header-content hp-viewport-hide"><a href="https://support.apple.com/">Support</a></li>
+                    <!-- masukkin input search -->
+                    
+                    <li class="header-content hp-viewport-hide fa-searchs"><a href="#" class="fas fa-search"></a></li>
+                    <input class="search" placeholder="search" type="search" name="">
+                    <!-- masukkin input search -->
+    
+                    <li class="header-content hp-viewport header-shoping"><a href="https://www.apple.com/us/shop/goto/bag" class="fas fa-shopping-bag"></a></li>
+                </ul>
+    
+            </div>
+        </div>
+        </header>
+        <!-- header -->
+        
+    
+
+    
+
+
+        
+        
+    
+    
+        
+
+
+    <section class="product-slider">
+        <div class="slider-heading">
+            <h1>STORE. <span><b>The best way to buy the products you love.</span></b></h1>
+        </div>
+    </div><ul class="autoWidth" class="cs-hidden">
+
+            
+
+            
+
+
+
+           
+
+            
+
+
+        <!--1-------------------------->
+        <li class="item-a">
+
+<!--img---------------------->
+            <div class="product-small img">
+            
+    
+    <img src="pic1.jpg" alt="iphone img" width="250" height="150">
+        </div>
+
+
+</li>
+
+
+       
+            <!--2-------------------------->
+            
+            <li class="item-a">
+
+  <!--img---------------------->
+                    <div class="product-small img">
+                    
+            
+            <img src="pic2.jpg">
+                </div>
+
+        </li>
+    
+        
+       
+                    <!--3-------------------------->
+       <!--img---------------------->
+                            <div class="product-small img">
+                            
+                    
+                    <img src="iphone.jpg">
+                    </div>
+
+                </li>
+       
+                            <!--4-------------------------->
+        <li class="item-a">
+
+
+                <!--img---------------------->
+                <div class="product-small img">
+                
+        
+        <img src="pic3.jpg">
+        </div>
+       
+    </li>            <!--5------------------------>
+    <li class="item-a">
+
+     <!--img---------------------->
+        <div class="product-small img">
+        
+
+<img src="pic4.jpg">
+</div>
+</li>
+   
+        <!--6------------------------>
+        <li class="item-a">
+
+   <!--img---------------------->
+                <div class="product-small img">
+                
+        
+        <img src="pic5.jpg">
+        </div>
+ </li>
+       
+                <!--7------------------------>
+                <li class="item-a">
+
+   <!--img---------------------->
+                        <div class="product-small img">
+                        
+                
+                <img src="pic9.jpg">
+                    </div>
+                           </li>
+            
+                   
+
+           
+      
+      <!--8-->
+      <li class="item-a">
+
+   <!--img---------------------->
+            <div class="product-small img">
+            
+    
+    <img src="pic6.jpg">
+            </div>
+    
+</li>
+
+       
+
+
+
+<!--9-->
+<li class="item-a">
+
+       <!--img---------------------->
+        <div class="product-small img">
+        
+
+<img src="pic7.jpg">
+        </div>
+</li>
+
+   
+
+
+
+<!--10-->
+<li class="item-a">
+
+   <!--img---------------------->
+        <div class="product-small img">
+        
+
+<img src="pic8.jpg">
+        </div>
+
+</li>
+
+
+   
+
+
+
+
+
+
+
+
+
+
+      
+      
+
+</section>
+
+
+<!--js-->
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js" integrity="sha512-Gfrxsz93rxFuB7KSYlln3wFqBaXUc1jtt3dGCp+2jTb563qYvnUBM/GP2ZUtRC27STN/zUamFtVFAIsRFoT6/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+
+      
+<script>
+  $(document).ready(function() {
+$('.autoWidth').lightSlider({
+    autoWidth:true,
+    loop:true,
+    onSliderLoad: function() {
+        $('.autoWidth').removeClass('cS-hidden');
+    } 
+});
+});
+
+</script>
+
+
+<div class="slider-heading">
+    <h1>The Latest. <span><b>Take alook at what's new, rights now.</span></b></h1>
+</div>
+
+</br>
+</div><ul class="autoWidth" class="cs-hidden">
+
+            
+
+            
+
+
+    <!--1-------------------------->
+    <li class="item-a">
+
+    <!---product-box-->
+<div class="product-box">
+    <a href="#">
+        <!--heading-->
+        <strong><center><b>Future.forward</center></b></strong>
+        <!--img---------------------->
+        
+
+<img src="pic10.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+    <!--price-->
+    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+    <!--btn-->
+    <a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+   
+        <!--2-------------------------->
+        <li class="item-a">
+
+            <!---product-box-->
+        <div class="product-box">
+            <a href="#">
+                <!--heading-->
+                <strong><center>iphone 13 pro.oh.so</center></strong>
+                <!--img---------------------->
+                
+        
+        <img src="pic11.jpg">
+        <!--colors-->
+        <div class="available-colors">
+       
+        
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+        </div>
+        <!--price-->
+        <div class="buy-price">
+            <!--price-->
+            <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+            <!--btn-->
+            <a href="#" class="buy-btn">Buy</a>
+
+        </div>
+
+        </a>
+    </li>
+   
+                <!--3-------------------------->
+                <li class="item-a">
+
+                    <!---product-box-->
+                <div class="product-box">
+                    <a href="#">
+                        <!--heading-->
+                        <strong><center>Give More To your Heart</center></strong>
+                        <!--img---------------------->
+                        
+                
+                <img src="pic12.jpg">
+                <!--colors-->
+                <div class="available-colors">
+               
+                
+        <div class="product-color" style="background-color: floralwhite;"></div>
+        <div class="product-color" style="background-color: grey;"></div>
+        <div class="product-color" style="background-color: lightcyan;"></div>
+        <div class="product-color" style="background-color: floralwhite;"></div>
+                </div>
+                <!--price-->
+                <div class="buy-price">
+                    <!--price-->
+                    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+                    <!--btn-->
+                    <a href="#" class="buy-btn">Buy</a>
+        
+                </div>
+        
+                </a>
+            </li>
+   
+                        <!--4------------------------->
+    <li class="item-a">
+
+        <!---product-box-->
+    <div class="product-box">
+        <a href="#">
+            <!--heading-->
+            <strong>Its Magic Remastered</strong>
+            <!--img---------------------->
+            
+    
+    <img src="pic13.jpg">
+    <!--colors-->
+    <div class="available-colors">
+   
+    
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+    </div>
+    <!--price-->
+    <div class="buy-price">
+        <!--price-->
+        <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+        <!--btn-->
+        <a href="#" class="buy-btn">Buy</a>
+
+    </div>
+
+    </a>
+</li>            <!--5----------------------->
+<li class="item-a">
+
+<!---product-box-->
+<div class="product-box">
+<a href="#">
+    <!--heading-->
+    <strong>Full Screen Ahead</strong>
+    <!--img---------------------->
+    
+
+<img src="pic14.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+<!--price-->
+<p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+<!--btn-->
+<a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+    <!--6------------------------>
+    <li class="item-a">
+
+        <!---product-box-->
+    <div class="product-box">
+        <a href="#">
+            <!--heading-->
+            <strong>Your New Super Power</strong>
+            <!--img---------------------->
+            
+    
+    <img src="pic15.jpg">
+    <!--colors-->
+    <div class="available-colors">
+   
+    
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+    </div>
+    <!--price-->
+    <div class="buy-price">
+        <!--price-->
+        <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+        <!--btn-->
+        <a href="#" class="buy-btn">Buy</a>
+
+    </div>
+
+    </a>
+</li>
+   
+            <!--7------------------------>
+            <li class="item-a">
+
+                <!---product-box-->
+            <div class="product-box">
+                <a href="#">
+                    <!--heading-->
+                    <strong>You've Never Heard Like this</strong>
+                    <!--img---------------------->
+                    
+            
+            <img src="pic17.jpg">
+            <!--colors-->
+            <div class="available-colors">
+           
+            
+    <div class="product-color" style="background-color: floralwhite;"></div>
+    <div class="product-color" style="background-color: grey;"></div>
+    <div class="product-color" style="background-color: lightcyan;"></div>
+    <div class="product-color" style="background-color: floralwhite;"></div>
+            </div>
+            <!--price-->
+            <div class="buy-price">
+                <!--price-->
+                <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+                <!--btn-->
+                <a href="#" class="buy-btn">Buy</a>
+    
+            </div>
+    
+            </a>
+        </li>
+        
+               
+
+       
+  
+  
+  
+  <li class="item-a">
+
+    <!---product-box-->
+<div class="product-box">
+    <a href="#">
+        <!--heading-->
+        <strong>Super Charged For Pros.</strong>
+        <!--img---------------------->
+        
+
+<img src="pic18.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+    <!--price-->
+    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+    <!--btn-->
+    <a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+   
+
+
+
+
+
+<li class="item-a">
+
+    <!---product-box-->
+<div class="product-box">
+    <a href="#">
+        <!--heading-->
+        <strong>iphone 13 pro</strong>
+        <!--img---------------------->
+        <img src="pic11.jpg">
+        
+
+
+</section>
+
+<!--js-->
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js" integrity="sha512-Gfrxsz93rxFuB7KSYlln3wFqBaXUc1jtt3dGCp+2jTb563qYvnUBM/GP2ZUtRC27STN/zUamFtVFAIsRFoT6/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+
+  
+<script>
+$(document).ready(function() {
+$('#autoWidth').lightSlider({
+autoWidth:true,
+loop:true,
+onSliderLoad: function() {
+    $('#autoWidth').removeClass('cS-hidden');
+} 
+});
+});
+
+</script>
+</ul>
+<div class="slider-heading">
+    <h1>Accessories. <span><b>Essential that pair perfectly with your favourite devices.</span></b></h1>
+</div>
+
+</br>
+</div><ul class="autoWidth" class="cs-hidden">
+
+            
+
+            
+
+
+
+</li>
+
+   
+        <!--2-------------------------->
+        <li class="item-a">
+
+            <!---product-box-->
+        <div class="product-box">
+            <a href="#">
+                <!--heading-->
+                <strong>iphone 13 pro</strong>
+                <!--img---------------------->
+                
+        
+        <img src="pic17.jpg">
+        <!--colors-->
+        <div class="available-colors">
+       
+        
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+        </div>
+        <!--price-->
+        <div class="buy-price">
+            <!--price-->
+            <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+            <!--btn-->
+            <a href="#" class="buy-btn">Buy</a>
+
+        </div>
+
+        </a>
+    </li>
+   
+                <!--3-------------------------->
+                <li class="item-a">
+
+                    <!---product-box-->
+                <div class="product-box">
+                    <a href="#">
+                        <!--heading-->
+                        <strong>iphone 13 pro</strong>
+                        <!--img---------------------->
+                        
+                
+                <img src="pic18.jpg">
+                <!--colors-->
+                <div class="available-colors">
+               
+                
+        <div class="product-color" style="background-color: floralwhite;"></div>
+        <div class="product-color" style="background-color: grey;"></div>
+        <div class="product-color" style="background-color: lightcyan;"></div>
+        <div class="product-color" style="background-color: floralwhite;"></div>
+                </div>
+                <!--price-->
+                <div class="buy-price">
+                    <!--price-->
+                    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+                    <!--btn-->
+                    <a href="#" class="buy-btn">Buy</a>
+        
+                </div>
+        
+                </a>
+            </li>
+   
+                        <!--4------------------------->
+    <li class="item-a">
+
+        <!---product-box-->
+    <div class="product-box">
+        <a href="#">
+            <!--heading-->
+            <strong>iphone 13 pro</strong>
+            <!--img---------------------->
+            
+    
+    <img src="pic20.jpg">
+    <!--colors-->
+    <div class="available-colors">
+   
+    
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+    </div>
+    <!--price-->
+    <div class="buy-price">
+        <!--price-->
+        <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+        <!--btn-->
+        <a href="#" class="buy-btn">Buy</a>
+
+    </div>
+
+    </a>
+</li>            <!--5----------------------->
+<li class="item-a">
+
+<!---product-box-->
+<div class="product-box">
+<a href="#">
+    <!--heading-->
+    <strong>iphone 13 pro</strong>
+    <!--img---------------------->
+    
+
+<img src="pic21.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+<!--price-->
+<p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+<!--btn-->
+<a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+    <!--6------------------------>
+    <li class="item-a">
+
+        <!---product-box-->
+    <div class="product-box">
+        <a href="#">
+            <!--heading-->
+            <strong>iphone 13 pro</strong>
+            <!--img---------------------->
+            
+    
+    <img src="pic22.jpg">
+    <!--colors-->
+    <div class="available-colors">
+   
+    
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+    </div>
+    <!--price-->
+    <div class="buy-price">
+        <!--price-->
+        <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+        <!--btn-->
+        <a href="#" class="buy-btn">Buy</a>
+
+    </div>
+
+    </a>
+</li>
+   
+            <!--7------------------------>
+            <li class="item-a">
+
+                <!---product-box-->
+            <div class="product-box">
+                <a href="#">
+                    <!--heading-->
+                    <strong>iphone 13 pro</strong>
+                    <!--img---------------------->
+                    
+            
+            <img src="pic23.jpg">
+            <!--colors-->
+            <div class="available-colors">
+           
+            
+    <div class="product-color" style="background-color: floralwhite;"></div>
+    <div class="product-color" style="background-color: grey;"></div>
+    <div class="product-color" style="background-color: lightcyan;"></div>
+    <div class="product-color" style="background-color: floralwhite;"></div>
+            </div>
+            <!--price-->
+            <div class="buy-price">
+                <!--price-->
+                <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+                <!--btn-->
+                <a href="#" class="buy-btn">Buy</a>
+    
+            </div>
+    
+            </a>
+        </li>
+        
+               
+
+       
+  
+  
+  
+  <li class="item-a">
+
+    <!---product-box-->
+<div class="product-box">
+    <a href="#">
+        <!--heading-->
+        <strong>iphone 13 pro</strong>
+        <!--img---------------------->
+        
+
+<img src="pic24.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+    <!--price-->
+    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+    <!--btn-->
+    <a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+   
+
+
+
+
+
+<li class="item-a">
+
+    <!---product-box-->
+<div class="product-box">
+    <a href="#">
+        <!--heading-->
+        <strong>iphone 13 pro</strong>
+        <!--img---------------------->
+        
+
+<img src="pic25.jpg">
+<!--colors-->
+<div class="available-colors">
+
+
+<div class="product-color" style="background-color: floralwhite;"></div>
+<div class="product-color" style="background-color: grey;"></div>
+<div class="product-color" style="background-color: lightcyan;"></div>
+<div class="product-color" style="background-color: floralwhite;"></div>
+</div>
+<!--price-->
+<div class="buy-price">
+    <!--price-->
+    <p>From $999 or $41.62/mo. for 24 mo. before trade-in*</p>
+    <!--btn-->
+    <a href="#" class="buy-btn">Buy</a>
+
+</div>
+
+</a>
+</li>
+
+   
+
+
+
+
+
+
+</section>
+
+<!--js-->
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js" integrity="sha512-Gfrxsz93rxFuB7KSYlln3wFqBaXUc1jtt3dGCp+2jTb563qYvnUBM/GP2ZUtRC27STN/zUamFtVFAIsRFoT6/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+
+  
+<script>
+$(document).ready(function() {
+$('#autoWidth').lightSlider({
+autoWidth:true,
+loop:true,
+onSliderLoad: function() {
+    $('#autoWidth').removeClass('cS-hidden');
+} 
+});
+});
+
+</script>
+</ul>
+
+</br>
+
+
+
+    
+<footer>
+    <div class="footer-container">
+        <div class="foot-notes">
+            <ul>
+                <li>
+                    1. Price includes a $30 AT&T, T-Mobile, Sprint, or Verizon discount. Requires activation with carrier. Monthly pricing: Available to qualified customers and requires 0% APR.
+                </li>
+
+                <li>
+                    2. Monthly pricing: Available to qualified customers and requires 0% APR, 24-month installment loan with Citizens One or Apple Card Monthly Installments.
+                </li>
+
+                <li>
+                    3. $9.99/month after free trial. No commitment. Plan automatically renews after trial until cancelled.
+                </li>
+
+                <li>
+                    4. The Apple One free trial includes only services that you are not currently using through a free trial or a subscription.
+                <li>
+
+                <li>
+                    To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or iPad with iOS 12.4 or later or iPadOS.
+                </li>
+
+                <li>
+                    Available for qualifying applicants in the United States.
+                </li>
+                
+                <li>
+                    Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
+                </li>
+                <li>
+                    Apple TV+ is $4.99/month after free trial. One subscription per Family Sharing group. Offer good for 3 months after eligible device activation. Plan automatically renews until cancelled. Restrictions and other terms apply.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<hr style="width: 70%;">
+<div class="footer-container">
+    <div class="footer-list">
+        <h3>Shop and Learn</h3>
+        <p><a href="https://www.apple.com/mac">Mac</a></p>
+        <p><a href="https://www.apple.com/ipad">iPad</a></p>
+        <p><a href="https://www.apple.com/iphone">iPhone</a></p>
+        <p><a href="https://www.apple.com/watch">Watch</a></p>
+        <p><a href="https://www.apple.com/tv">TV</a></p>
+        <p><a href="https://www.apple.com/music">Music</a></p>
+        <p><a href="https://www.apple.com/airpods">AirPods</a></p>
+        <p><a href="https://www.apple.com/homepod">HomePod</a></p>
+        <p><a href="https://www.apple.com/ipad-touch">iPod touch</a></p>
+        <p><a href="https://www.apple.com/shop/accessories/all">Accessories</a></p>
+        <p><a href="https://www.apple.com/shop/gift-cards">Gift Cards</a></p>
+    </div>
+    <div class="footer-list">
+        <h3>Services</h3>
+        <p><a href="https://www.apple.com/apple-music">Apple Music</a></p>
+        <p><a href="https://www.apple.com/apple-tv-plus">Apple TV+</a></p>
+        <p><a href="https://www.apple.com/apple-fitnes-plus">Apple Fitness+</a></p>
+        <p><a href="https://www.apple.com/apple-news">Apple News+</a></p>
+        <p><a href="https://www.apple.com/apple-arcade">Apple Arcade</a></p>
+        <p><a href="https://www.apple.com/icloud">iCloud</a></p>
+        <p><a href="https://www.apple.com/apple-one">Apple One</a></p>
+        <p><a href="https://www.apple.com/apple-card">Apple Card</a></p>
+        <p><a href="https://www.apple.com/apple-books">Apple Books</a></p>
+        <p><a href="https://www.apple.com/app-store">App Store</a></p>
+    </div>
+    <div class="footer-list">
+        <h3>Apple Store</h3>
+        <p><a href="https://www.apple.com/retail">Find a Store</a></p>
+        <p><a href="https://www.apple.com/shop">Shop Online</a></p>
+        <p><a href="https://www.apple.com/retail/geniusbar">Genius Bar</a></p>
+        <p><a href="https://www.apple.com/today">Today at Apple</a></p>
+        <p><a href="https://www.apple.com/today/camp">Apple Camp</a></p>
+        <p><a href="https://apps.apple.com/app/apple-store/id375380948">Apple Store App</a></p>
+        <p><a href="https://www.apple.com/shop/refurbished">Refurbished and Clearance</a></p>
+        <p><a href="https://www.apple.com/shop/browse/financing">Financing</a></p>
+        <p><a href="https://www.apple.com/shop/trade-in">Apple Trade In</a></p>
+        <p><a
+                href="https://secure4.store.apple.com/shop/signIn/orders?r=SCKFUHKXACXX7DYHYT9JT7JJTAPAXHFKH&s=aHR0cHM6Ly9zZWN1cmU0LnN0b3JlLmFwcGxlLmNvbS9zaG9wL29yZGVyL2xpc3R8MWFvc2MyMzE1ZDYzNTE4MGIwZTg4MWE3YzIwOWJjMTVkMjNlMzI4ZTBkN2Y">Order
+                Status</a></p>
+        <p><a href="https://www.apple.com/shop/help">Shopping Help</a></p>
+    </div>
+    <!-- <div class="footer-copyright">
+        <img class="logo-footer" src=" alt="footer logo">
+        <p class="txt-copy"><a target="_blank" href="https://www.apple.com/id/">appleindonesia</a> &copy; 2021</p>
+    </div> -->
+</div>
+</footer>
+
+
+
+
+    
+
+       
+
+</body>
+    
+    
+
+</html>
